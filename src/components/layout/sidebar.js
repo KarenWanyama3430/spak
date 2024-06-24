@@ -6,10 +6,16 @@ import Drawer from '@mui/material/Drawer'
 import CssBaseline from '@mui/material/CssBaseline'
 import List from '@mui/material/List'
 import Divider from '@mui/material/Divider'
-import DashboardIcon from '@mui/icons-material/Dashboard'
-import ApartmentIcon from '@mui/icons-material/Apartment'
-import Logo from '../../assets/logo.png'
 import ListItemWithLink from '../ListItemWithLink'
+import { Typography } from '@mui/material'
+// import Logo from '../../assets/logo.png'
+import Dashboard_icon from '../../assets/dashboard_icon.png'
+import Asset_icon from '../../assets/asset_icon.png'
+import Maintenance_icon  from '../../assets/maintenance_icon.png'
+import Helpcenter_icon from '../../assets/helpcenter_icon.png'
+import Reports_icon from '../../assets/reports_icon.png'
+import Settings_icon from '../../assets/settings_icon.png'
+import Logout_icon from '../../assets/logout_icon.png'
 
 const drawerWidth = 300
 
@@ -35,48 +41,63 @@ export default function VerticalSidebar({ children }) {
             '& .MuiDrawer-paper': {
               width: drawerWidth,
               boxSizing: 'border-box',
-              backgroundColor: '#081F5C',
+            //   backgroundColor: '#081F5C',
+              color: '081F5C'
             },
           }}
           variant='persistent'
           anchor='left'>
           <DrawerHeader sx={{ display: 'flex', justifyContent: 'center' }}>
-            <img src={Logo} alt='' style={{ maxWidth: '100%' }} />
+            {/* <img src={Logo} alt='' style={{ maxWidth: '100%' }} /> */}
+            <Typography variant='h4' gutterBottom> Sana Sana</Typography>
           </DrawerHeader>
-          <Divider />
+   
           <List>
+            <Typography variant='h5' gutterBottom> HOME</Typography>
+
             <ListItemWithLink
               label='Dashboard'
-              icon={<DashboardIcon />}
-              to='/'
+              icon={ <img src={Dashboard_icon} alt="Custom Icon" />}
+              to='/dashboard'
             />
             <ListItemWithLink
-              label='Repair Requests'
-              icon={ <img src={Logo} alt="Custom Icon" />}
-              to='/dashboard/requests'
+              label='Assets'
+              icon={ <img src={Asset_icon} alt="Custom Icon" />}
+              to='/asset'
             />
             <ListItemWithLink
-              label='Work Orders'
-              icon={ <img src={Logo} alt="Custom Icon" />}
-              to='/dashboard/orders'
+              label='Maintenance'
+              icon={ <img src={Maintenance_icon} alt="Custom Icon" />}
+              to='/maintenance'
             />
-            <ListItemWithLink
-              label='Properties'
-              icon={<ApartmentIcon />}
-              to='/dashboard/properties'
-            />
-             {/* <ListItemWithLink
-              label='Technician'
-              icon={ <img src={technician} alt="Custom Icon" />}
-              to='#'
-            /> */}
              <ListItemWithLink
-              label='Settings'
-              icon={ <img src={Logo} alt="Custom Icon" />}
-              to='#'
+              label='Reports'
+              icon={ <img src={Reports_icon} alt="Custom Icon" />}
+              to='/reports'
             />
           </List>
           <Divider />
+
+          <Typography variant='h5' gutterBottom> GENERAL</Typography>
+
+          <ListItemWithLink
+              label='Settings'
+              icon={ <img src={Settings_icon} alt="Custom Icon" />}
+              to='/settings'
+            />
+
+            <ListItemWithLink
+              label='Help Center'
+              icon={ <img src={Helpcenter_icon} alt="Custom Icon" />}
+              to='/reports'
+            />
+
+            <ListItemWithLink
+              label='Logout'
+              icon={ <img src={Logout_icon} alt="Custom Icon" />}
+              to='/logout'
+            />
+
         </Drawer>
         <main style={{ flexGrow: 1, padding: '20px' }}>{children}</main>
       </Box>

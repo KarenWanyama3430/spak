@@ -10,6 +10,7 @@ function App() {
       <Routes>
      
       <Route path="/" element={ <Layout> <Dashboard/> </Layout>  } />
+      <Route path="/dashboard" element={ <Layout> <Dashboard/> </Layout>  } />
         
 
       </Routes>
