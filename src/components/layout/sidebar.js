@@ -63,7 +63,7 @@ export default function VerticalSidebar({ children }) {
             <ListItemWithLink
               label='Assets'
               icon={ <img src={Asset_icon} alt="Custom Icon" />}
-              to='/asset'
+              to='/assets'
             />
             <ListItemWithLink
               label='Maintenance'
